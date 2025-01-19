@@ -1,10 +1,18 @@
 {
   "name": "editorium",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Editorium",
-  "main": "index.js",
+  "main": "dist/editorium.js",
+  "exports": {
+    ".": {
+      "import": "dist/editorium.js",
+      "require": "dist/editorium.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -20,8 +28,8 @@
   },
   "homepage": "https://github.com/GausAlMunirTushar/Editorium#readme",
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -31,6 +39,8 @@
     "css-loader": "^7.1.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0"
   }
 }
